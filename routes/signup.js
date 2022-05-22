@@ -30,7 +30,13 @@ router.post("/", (req, res) => {
             alert("FAILED");
             res.redirect("/signup");
         } else {
-            res.redirect("/subscriptions");
+            const currentUser = User.findOne(
+                { username: req.body.username },
+                (err, user) => {
+                    console.log();
+                    res.redirect(`/subscriptions/${user._id.valueOf()}`);
+                }
+            );
         }
     });
 });

@@ -4,16 +4,19 @@ const router = express.Router();
 
 const User = require("../models/user");
 
-router.get("/", (req, res) => {
-    res.redirect("/subscriptions/view");
+router.get("/:userID", (req, res) => {
+    const userID = req.params.userID;
+    res.redirect(`/subscriptions/${userID}/view`);
 });
 
 router.get("/add", (req, res) => {});
 
 router.post("/add", (req, res) => {});
 
-router.get("/view", (req, res) => {
-    res.send("SUBSCRIPTIOSN");
+router.get("/:userID/view", (req, res) => {
+    const userID = req.params.userID;
+    console.log(req.session);
+    res.send(userID);
 });
 
 router.get("/edit", (req, res) => {});
