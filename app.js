@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const path = require("path");
 const mongoose = require("mongoose");
+const pug = require("pug");
 
 // mongoose.connect(
 //     mongoose
@@ -16,6 +17,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 
+app.set("views", "./views");
 app.set("view engine", "pug");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));

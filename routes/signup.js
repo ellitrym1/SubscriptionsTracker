@@ -2,7 +2,11 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.send("SIGN UP!");
+    res.render("signup");
+});
+
+router.post("/", (req, res) => {
+    res.send(req.body.username);
 });
 
 module.exports = router;

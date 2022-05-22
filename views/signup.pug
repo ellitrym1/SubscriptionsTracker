@@ -1,0 +1,16 @@
+include header 
+
+.signup
+    .signup-modal 
+        h1 SIGN UP
+            form(action="/signup" method="post" class="form-elements-container")
+                .signup-username(class="form-elements") 
+                    label(id="label-username") Username 
+                    input(type="text", name="username", id="username")
+                .signup-email(class="form-elements")
+                    label(id="label-email") Email
+                    input(type="text", name="email", id="email")
+                .signup-password(class="form-elements")
+                    label(id="label-password") Password
+                    input(type="password", name="password", id="password")
+                button(type="submit") SIGNUP

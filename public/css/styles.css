@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/*
+    HOME
+*/
+
+.home,
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../assets/background.jpg");
+}
+
+.home-modal,
+.signup-modal {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    min-width: 50%;
+    min-height: 50vh;
+    /* min-width: 200px; */
+}
+
+.home-modal,
+.signup-modal > h1 {
+    margin-bottom: 1em;
+    font-size: 50px;
+    text-align: center;
+}
+
+.home-modal > .home-btn-grp {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25em;
+    width: 30%;
+}
+
+.home-modal .home-btn {
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+.home-modal .home-btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px black;
+}
+
+/*
+    SIGN UP
+*/
+.form-elements-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25em;
+    margin: 0.5em;
+}
+
+.form-elements-container label {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.form-elements-container input {
+    border-radius: 7px;
+    height: 2em;
+}
+
+.form-elements-container > button {
+    width: fit-content;
+    margin-top: 1em;
+    padding: 2px 7px;
+}
