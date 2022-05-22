@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-const { schema } = mongoose;
+const { Schema } = mongoose;
 
-import Subscription from "./subscription";
+const Subscription = require("./subscription");
 
-const userSchema = new schema({
+const userSchema = new Schema({
     username: String,
     email: String,
     password: String,

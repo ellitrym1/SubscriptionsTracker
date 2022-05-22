@@ -4,15 +4,15 @@ const session = require("express-session");
 const path = require("path");
 const mongoose = require("mongoose");
 
-mongoose.connect(
-    mongoose
-        .connect(
-            `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.abg27.mongodb.net/blogDB`,
-            { useNewUrlParser: true }
-        )
-        .then((db) => console.log("DB is connected"))
-        .catch((err) => console.log(err))
-);
+// mongoose.connect(
+//     mongoose
+//         .connect(
+//             `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.abg27.mongodb.net/blogDB`,
+//             { useNewUrlParser: true }
+//         )
+//         .then((db) => console.log("DB is connected"))
+//         .catch((err) => console.log(err))
+// );
 
 const app = express();
 
