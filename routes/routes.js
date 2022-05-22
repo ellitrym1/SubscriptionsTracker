@@ -4,6 +4,7 @@ const auth = require("./auth");
 const signup = require("./signup");
 const signin = require("./signin");
 const subscriptions = require("./subscriptions");
+
 module.exports = function (app) {
     app.use(express.json());
 
