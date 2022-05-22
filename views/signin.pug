@@ -1,0 +1,13 @@
+include header 
+
+.signin
+    .signin-modal 
+        h1 SIGN IN
+            form(action="/signin" method="post" class="form-elements-container")
+                .signin-username(class="form-elements") 
+                    label(id="label-username") Username 
+                    input(type="text", name="username", id="username", required)
+                .signin-password(class="form-elements")
+                    label(id="label-password") Password
+                    input(type="password", name="password", id="password", required)
+                button(type="submit") SIGNIN

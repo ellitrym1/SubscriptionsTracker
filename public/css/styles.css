@@ -17,7 +17,8 @@ a {
 */
 
 .home,
-.signup {
+.signup,
+.signin {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +27,8 @@ a {
 }
 
 .home-modal,
-.signup-modal {
+.signup-modal,
+.signin-modal {
     background-color: white;
     display: flex;
     justify-content: center;
@@ -39,9 +41,10 @@ a {
 }
 
 .home-modal,
-.signup-modal > h1 {
+.signup-modal,
+.signin-modal > h1 {
     margin-bottom: 1em;
-    font-size: 50px;
+    font-size: 44px;
     text-align: center;
 }
 

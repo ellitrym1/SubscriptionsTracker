@@ -6,11 +6,11 @@ include header
             form(action="/signup" method="post" class="form-elements-container")
                 .signup-username(class="form-elements") 
                     label(id="label-username") Username 
-                    input(type="text", name="username", id="username")
+                    input(type="text", name="username", id="username", required)
                 .signup-email(class="form-elements")
                     label(id="label-email") Email
-                    input(type="text", name="email", id="email")
+                    input(type="text", name="email", id="email", required)
                 .signup-password(class="form-elements")
                     label(id="label-password") Password
-                    input(type="password", name="password", id="password")
+                    input(type="password", name="password", id="password", required)
                 button(type="submit") SIGNUP
