@@ -5,19 +5,21 @@ include header
         .user= name
         a(class="logout-btn" href="/logout") LOG OUT 
     .subscriptions-modal 
-        h1 SUBSCRIPTIONS
-        
-            
-        table 
-            tr 
-                th NAME 
-                th PAYMENT DATE 
-                th AMOUNT 
-            each subscription in subscriptions 
+        .subscriptions-modal-header 
+            h1 SUBSCRIPTIONS
+            a(class="subscription-add" href="/add") ADD
+        if subscriptions.length != 0
+            table 
                 tr 
-                    th= subscription.name 
-                    th= subscription.paymentDate 
-                    th= subscription.amount
-            else 
-                tr 
-                    th No active subscriptions
+                    th NAME 
+                    th PAYMENT DATE 
+                    th AMOUNT 
+                each subscription in subscriptions 
+                    tr(class="subscription-row") 
+                        th= subscription.name 
+                        th= subscription.paymentDate 
+                        th= subscription.amount
+                        th a(class="subscription-add" href="/add") EDIT 
+                        th a(class="subscription-add" href="/add") DELETE   
+        else 
+            h2 NO ACTIVE SUBSCRIPTION

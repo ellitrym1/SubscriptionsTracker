@@ -33,7 +33,7 @@ a {
 .subscriptions-modal {
     background-color: white;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
@@ -111,18 +111,21 @@ a {
     color: white;
 }
 
-.current-user > .user {
-    margin-right: 1em;
-}
-
 .subscriptions-modal {
     min-height: 70vh;
 }
+.subscriptions-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-.subscriptions .logout-btn {
+.subscriptions .logout-btn,
+.subscription-add {
     border-radius: 5px;
     background-color: blue;
     color: white;
     font-size: 20px;
-    padding: 5px 10px;
+    padding: 3px 8px;
+    margin-left: 1.25em;
 }
