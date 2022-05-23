@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const { document } = new JSDOM(`...`).window;
 
 const User = require("../models/user");
-const Subscription = require("../models/subscription");
-const { updateOne } = require("../models/user");
 
 router.get("/", (req, res) => {
     const userID = req.cookies.user;
@@ -29,9 +30,9 @@ router.post("/add", async (req, res) => {
     const updatedUser = await User.findOneAndUpdate(
         { _id: req.cookies.user },
         {
-            subscriptions: subscription,
+            $push: { subscriptions: subscription },
         },
-        { new: true }
+        { new: false }
     );
     console.log(updatedUser);
     res.redirect(`/subscriptions`);
@@ -51,7 +52,24 @@ router.get("/:userID/view", (req, res) => {
     });
 });
 
-router.get("/delete", (req, res) => {});
+router.get("/delete/:deleteID", (req, res) => {
+    const deleteID = req.params.deleteID;
+    console.log(deleteID);
+
+    const name = document.getElementById(`name-${deleteID}`);
+    const date = document.querySelector(`.date-${deleteID}`);
+    const frequency = document.querySelector(`.frequency-${deleteID}`);
+    const amount = document.querySelector(`.amount-${deleteID}`);
+
+    const subscription = {
+        name: name,
+        paymentDate: date,
+        paymentFrequency: frequency,
+        amount: amount,
+    };
+    console.log(subscription);
+    res.render("subscription-delete", { subscription: subscription });
+});
 
 router.post("/delete", (req, res) => {});
 

@@ -14,12 +14,14 @@ include header
                     th NAME 
                     th PAYMENT DATE 
                     th AMOUNT 
-                each subscription in subscriptions 
-                    tr(class="subscription-row") 
-                        th= subscription.name 
-                        th= subscription.paymentDate 
-                        th= subscription.amount
+                each subscription, index in subscriptions 
+                    tr(class=`subscription-row`) 
+                        th(id=`name-${index}`)= subscription.name 
+                        th(class=`date-${index}`)= subscription.paymentDate
+                        th(class=`frequency-${index}`)= subscription.paymentFrequency  
+                        th(class=`amount-${index}`)= subscription.amount
                         th 
-                            a(class="subscription-delete-btn" href="/subscriptions/delete") DELETE   
+                            a(class=`subscription-delete-btn subscription-delete-btn-${index}` href=`/subscriptions/delete/${index}`) DELETE   
+   
         else 
             h2 NO ACTIVE SUBSCRIPTION

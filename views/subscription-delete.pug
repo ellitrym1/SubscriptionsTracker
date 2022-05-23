@@ -6,18 +6,14 @@ include header
             form(action="/subscriptions/delete" method="post" class="form-elements-container")
                 .subscription-name(class="form-elements") 
                     label(id="label-subscription-name") Subscription name
-                    input(type="text", name="name", id="subscription-name", required)
+                    input(type="text", name="name", id="subscription-name", placeholder=`${subscription.name}`, disabled)
                 .payment-date(class="form-elements")
                     label(id="label-payment-date") Payment Date
-                    input(type="text", name="date", id="payment-date", required)
+                    input(type="text", name="date", id="payment-date", placeholder= subscription.date, disabled)
                 .payment-frequency(class="form-elements")
                     label(id="label-payment-frequency") Payment Frequency
-                    select(name="frequency", id="payment-frequency", required)
-                        option(value="weekly") Weekly
-                        option(value="weekly") Monthly
-                        option(value="weekly") Bi-Annually
-                        option(value="weekly") Annually        
+                    input(type="text", name="frequency", id="payment-frequency", placeholder= subscription.frequency, disabled)     
                 .amount(class="form-elements")
                     label(id="label-amount") Amount
-                    input(type="text", name="amount", id="amount", required)
+                    input(type="text", name="amount", id="amount", placeholder= subscription.amount, disabled)
                 button(type="submit") DELETE
