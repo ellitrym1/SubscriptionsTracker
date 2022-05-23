@@ -51,10 +51,6 @@ router.get("/:userID/view", (req, res) => {
     });
 });
 
-router.get("/edit", (req, res) => {});
-
-router.post("/edit", (req, res) => {});
-
 router.get("/delete", (req, res) => {});
 
 router.post("/delete", (req, res) => {});

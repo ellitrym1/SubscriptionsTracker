@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const subscriptionSchema = new Schema({
     name: String,
-    paymentDate: Date,
+    paymentDate: String,
     paymentFrequency: String,
     amount: String,
 });
