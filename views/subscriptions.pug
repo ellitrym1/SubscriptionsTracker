@@ -1,9 +1,12 @@
 include header 
 
 .subscriptions
+    .current-user 
+        .user= name
+        a(class="logout-btn" href="/logout") LOG OUT 
     .subscriptions-modal 
         h1 SUBSCRIPTIONS
-        a(class="logout-btn" href="/logout") LOG OUT 
+        
             
         table 
             tr 

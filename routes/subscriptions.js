@@ -23,14 +23,12 @@ router.get("/:userID/view", (req, res) => {
         res.send("NOT LOGGED IN");
     }
 
-    let subscriptions = [];
-
     User.findOne({ _id: userID }, (err, user) => {
-        subscriptions = user.subscriptions;
+        res.render("subscriptions", {
+            name: user.username,
+            subscriptions: user.subscriptions,
+        });
     });
-
-    console.log(subscriptions);
-    res.render("subscriptions", { subscriptions: subscriptions });
 });
 
 router.get("/edit", (req, res) => {});

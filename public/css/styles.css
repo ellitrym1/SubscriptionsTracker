@@ -33,7 +33,7 @@ a {
 .subscriptions-modal {
     background-color: white;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
@@ -98,7 +98,28 @@ a {
     padding: 2px 7px;
 }
 
-.subscriptions-modal > .logout-btn {
+.subscriptions {
+    position: relative;
+}
+
+.subscriptions > .current-user {
+    position: absolute;
+    top: 1vh;
+    right: 2vw;
+    display: flex;
+    padding: 5px;
+    color: white;
+}
+
+.current-user > .user {
+    margin-right: 1em;
+}
+
+.subscriptions-modal {
+    min-height: 70vh;
+}
+
+.subscriptions .logout-btn {
     border-radius: 5px;
     background-color: blue;
     color: white;
