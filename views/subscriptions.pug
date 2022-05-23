@@ -7,7 +7,7 @@ include header
     .subscriptions-modal 
         .subscriptions-modal-header 
             h1 SUBSCRIPTIONS
-            a(class="subscription-add" href="/add") ADD
+            a(class="subscription-add-btn" href="/subscriptions/add") ADD
         if subscriptions.length != 0
             table 
                 tr 
@@ -19,7 +19,9 @@ include header
                         th= subscription.name 
                         th= subscription.paymentDate 
                         th= subscription.amount
-                        th a(class="subscription-add" href="/add") EDIT 
-                        th a(class="subscription-add" href="/add") DELETE   
+                        th
+                            a(class="subscription-edit-btn" href="/subscriptions/edit") EDIT 
+                        th 
+                            a(class="subscription-delete-btn" href="/subscriptions/delete") DELETE   
         else 
             h2 NO ACTIVE SUBSCRIPTION

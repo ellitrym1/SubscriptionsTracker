@@ -1,0 +1,23 @@
+include header 
+
+.subscriptions
+    .subscriptions-modal 
+        h1 ADD SUBSCRIPTION
+            form(action="/subscriptions/add" method="post" class="form-elements-container")
+                .subscription-name(class="form-elements") 
+                    label(id="label-subscription-name") Subscription name
+                    input(type="text", name="name", id="subscription-name", required)
+                .payment-date(class="form-elements")
+                    label(id="label-payment-date") Payment Date
+                    input(type="text", name="date", id="payment-date", required)
+                .payment-frequency(class="form-elements")
+                    label(id="label-payment-frequency") Payment Frequency
+                    select(name="frequency", id="payment-frequency", required)
+                        option(value="weekly") Weekly
+                        option(value="weekly") Monthly
+                        option(value="weekly") Bi-Annually
+                        option(value="weekly") Annually        
+                .amount(class="form-elements")
+                    label(id="label-amount") Amount
+                    input(type="text", name="amount", id="amount", required)
+                button(type="submit") ADD

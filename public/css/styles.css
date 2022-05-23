@@ -121,7 +121,9 @@ a {
 }
 
 .subscriptions .logout-btn,
-.subscription-add {
+.subscription-add-btn,
+.subscription-edit-btn,
+.subscription-delete-btn {
     border-radius: 5px;
     background-color: blue;
     color: white;
