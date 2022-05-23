@@ -12,16 +12,25 @@ include header
             table 
                 tr 
                     th NAME 
-                    th PAYMENT DATE 
+                    th DATE 
+                    th FREQUENCY
                     th AMOUNT 
-                each subscription, index in subscriptions 
+                each subscription in subscriptions
                     tr(class=`subscription-row`) 
-                        th(id=`name-${index}`)= subscription.name 
-                        th(class=`date-${index}`)= subscription.paymentDate
-                        th(class=`frequency-${index}`)= subscription.paymentFrequency  
-                        th(class=`amount-${index}`)= subscription.amount
-                        th 
-                            a(class=`subscription-delete-btn subscription-delete-btn-${index}` href=`/subscriptions/delete/${index}`) DELETE   
+                        form(action=`/subscriptions/delete`, method="post")
+                            td(style="display:none")
+                                input(type="text", name="name", value=`${subscription.name}` id="subscription-name")
+                            td 
+                                span= subscription.name
+                            td 
+                                span= subscription.paymentDate
+                            td 
+                                span= subscription.paymentFrequency  
+                            td 
+                                span= subscription.amount
+                            td
+                                button(type="submit") DELETE
+                    
    
         else 
             h2 NO ACTIVE SUBSCRIPTION

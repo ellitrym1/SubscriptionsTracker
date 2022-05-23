@@ -52,25 +52,33 @@ router.get("/:userID/view", (req, res) => {
     });
 });
 
-router.get("/delete/:deleteID", (req, res) => {
-    const deleteID = req.params.deleteID;
-    console.log(deleteID);
+router.get("/delete", (req, res) => {});
 
-    const name = document.getElementById(`name-${deleteID}`);
-    const date = document.querySelector(`.date-${deleteID}`);
-    const frequency = document.querySelector(`.frequency-${deleteID}`);
-    const amount = document.querySelector(`.amount-${deleteID}`);
+router.post("/delete", (req, res) => {
+    const subscriptionName = req.body.name;
+    User.findOne(
+        { _id: req.cookies.user },
+        "subscriptions",
+        async (err, data) => {
+            // console.log(typeof data.subscriptions);
+            // console.log(
+            //     data.subscriptions.filter(
+            //         (subscription) => subscription.name !== subscriptionName
+            //     )
+            // );
+            const updatedUser = await User.findOneAndUpdate(
+                { name: req.body.name },
+                {
+                    subscriptions: data.subscriptions.filter(
+                        (subscription) => subscription.name !== subscriptionName
+                    ),
+                }
+            );
+            console.log(updatedUser);
+        }
+    );
 
-    const subscription = {
-        name: name,
-        paymentDate: date,
-        paymentFrequency: frequency,
-        amount: amount,
-    };
-    console.log(subscription);
-    res.render("subscription-delete", { subscription: subscription });
+    res.redirect("/subscriptions");
 });
-
-router.post("/delete", (req, res) => {});
 
 module.exports = router;
