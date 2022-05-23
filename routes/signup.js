@@ -33,8 +33,9 @@ router.post("/", (req, res) => {
             const currentUser = User.findOne(
                 { username: req.body.username },
                 (err, user) => {
-                    console.log();
-                    res.redirect(`/subscriptions/${user._id.valueOf()}`);
+                    req.session.currentUser = user;
+                    res.cookie("user", user._id.valueOf());
+                    res.redirect(`/subscriptions`);
                 }
             );
         }

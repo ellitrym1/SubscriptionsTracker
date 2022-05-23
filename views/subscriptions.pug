@@ -1,0 +1,20 @@
+include header 
+
+.subscriptions
+    .subscriptions-modal 
+        h1 SUBSCRIPTIONS
+        a(class="logout-btn" href="/logout") LOG OUT 
+            
+        table 
+            tr 
+                th NAME 
+                th PAYMENT DATE 
+                th AMOUNT 
+            each subscription in subscriptions 
+                tr 
+                    th= subscription.name 
+                    th= subscription.paymentDate 
+                    th= subscription.amount
+            else 
+                tr 
+                    th No active subscriptions

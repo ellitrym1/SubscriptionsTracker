@@ -18,7 +18,8 @@ a {
 
 .home,
 .signup,
-.signin {
+.signin,
+.subscriptions {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +29,8 @@ a {
 
 .home-modal,
 .signup-modal,
-.signin-modal {
+.signin-modal,
+.subscriptions-modal {
     background-color: white;
     display: flex;
     justify-content: center;
@@ -94,4 +96,12 @@ a {
     width: fit-content;
     margin-top: 1em;
     padding: 2px 7px;
+}
+
+.subscriptions-modal > .logout-btn {
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
 }
