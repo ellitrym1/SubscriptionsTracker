@@ -60,12 +60,6 @@ router.post("/delete", (req, res) => {
         { _id: req.cookies.user },
         "subscriptions",
         async (err, data) => {
-            // console.log(typeof data.subscriptions);
-            // console.log(
-            //     data.subscriptions.filter(
-            //         (subscription) => subscription.name !== subscriptionName
-            //     )
-            // );
             const updatedUser = await User.findOneAndUpdate(
                 { name: req.body.name },
                 {

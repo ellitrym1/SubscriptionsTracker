@@ -79,7 +79,7 @@ a {
     justify-content: center;
     align-items: center;
     padding: 0.25em;
-    margin: 0.5em;
+    /* margin: 0.5em; */
 }
 
 .form-elements-container label {
@@ -130,4 +130,8 @@ a {
     font-size: 20px;
     padding: 3px 8px;
     margin-left: 1.25em;
+}
+
+.subscriptions table {
+    border-radius: 1px solid black;
 }
