@@ -137,7 +137,9 @@ a {
     border-radius: 1px solid black;
 }
 
-.popup-modal-bg {
+.popup-modal-add-bg,
+.popup-modal-edit-bg,
+.popup-modal-delete-bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -151,7 +153,9 @@ a {
     opacity: 0;
 }
 
-.popup-modal {
+.popup-modal-add,
+.popup-modal-edit,
+.popup-modal-delete {
     background-color: whitesmoke;
     width: 30%;
     height: 30vh;

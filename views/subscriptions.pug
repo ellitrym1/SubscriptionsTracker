@@ -17,7 +17,7 @@ include header
                     th AMOUNT 
                 each subscription in subscriptions
                     tr(class=`subscription-row`) 
-                        form(action=`/subscriptions/delete`, method="post")
+                        form(id="subscription-form" action=`/subscriptions/delete`, method="post")
                             td(style="display:none")
                                 input(type="text", name="name", value=`${subscription.name}` id="subscription-name")
                             td 
@@ -36,10 +36,22 @@ include header
         else 
             h2 NO ACTIVE SUBSCRIPTION
 
-.popup-modal-bg 
-    .popup-modal 
-        span.popup-close X 
-        div TEST 
-        button.popup-btn TEST
+.popup-modal-add-bg 
+    .popup-modal-add      
+        div ADD 
+        button.popup-btn ADD
+        span.popup-close Close
+
+.popup-modal-edit-bg 
+    .popup-modal-edit       
+        div EDIT
+        button.popup-btn EDIT
+        span.popup-close Close
+
+.popup-modal-delete-bg 
+    .popup-modal-delete      
+        div Are you sure?
+        button.popup-btn(form="subscription-form") DELETE
+        span.popup-close Close
 
 
