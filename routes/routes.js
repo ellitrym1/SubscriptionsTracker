@@ -13,6 +13,5 @@ module.exports = function (app) {
     app.use("/signup", signup);
     app.use("/signin", signin);
     app.use("/logout", logout);
-    app.use("/auth", auth);
     app.use("/subscriptions", subscriptions);
 };
