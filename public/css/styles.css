@@ -151,6 +151,7 @@ a {
     background-color: rgba(0, 0, 0, 0.6);
     visibility: hidden;
     opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
 }
 
 .popup-modal-add,
