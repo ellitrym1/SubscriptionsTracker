@@ -27,12 +27,11 @@ include header
                             td 
                                 span= subscription.paymentFrequency  
                             td 
-                                span= subscription.amount
+                                span= subscription.amount 
                             td
-                                button(type="submit") EDIT  
+                                .form-btn(class="delete-btn") DELETE
                             td
-                                button(type="submit") DELETE
-                    
+                                .form-btn(class="edit-btn") EDIT
    
         else 
             h2 NO ACTIVE SUBSCRIPTION
