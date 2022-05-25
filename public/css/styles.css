@@ -159,6 +159,8 @@ a {
     align-items: center;
     flex-direction: column;
     position: relative;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .popup-close {
@@ -166,4 +168,9 @@ a {
     top: 5px;
     right: 7px;
     cursor: pointer;
+}
+
+.popup-toggle {
+    visibility: visible;
+    opacity: 1;
 }
