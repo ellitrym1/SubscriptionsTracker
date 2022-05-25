@@ -58,18 +58,18 @@ include header
                     label(id="label-amount") Amount
                     input(type="text", name="amount", id="amount", required)
                 button(type="submit") ADD
-        span.popup-close Close
+        span.popup-close(class="popup-add-close") Close
 
 .popup-modal-edit-bg 
     .popup-modal-edit       
         div EDIT
         button.popup-btn EDIT
-        span.popup-close Close
+        span.popup-close(class="popup-edit-close") Close
 
 .popup-modal-delete-bg 
     .popup-modal-delete      
         div Are you sure?
         button.popup-btn(form="subscription-form") DELETE
-        span.popup-close Close
+        span.popup-close(class="popup-delete-close") Close
 
 

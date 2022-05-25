@@ -1,5 +1,4 @@
-let popupBtn = document.querySelector(".popup-close");
-let popupModalBg = document.querySelector(".popup-modal-bg");
+let popupBtn = document.querySelectorAll(".popup-close");
 
 let addBtn = document.querySelector(".add-btn");
 let popupModalAddBg = document.querySelector(".popup-modal-add-bg");
@@ -22,7 +21,14 @@ deleteBtn.addEventListener("click", function () {
     popupModalDeleteBg.classList.add("popup-toggle");
 });
 
-popupBtn.addEventListener("click", function () {
-    console.log("MEOW");
-    popupModalBg.classList.remove("popup-toggle");
+popupBtn[0].addEventListener("click", function () {
+    popupModalAddBg.classList.remove("popup-toggle");
+});
+
+popupBtn[1].addEventListener("click", function () {
+    popupModalEditBg.classList.remove("popup-toggle");
+});
+
+popupBtn[2].addEventListener("click", function () {
+    popupModalDeleteBg.classList.remove("popup-toggle");
 });
