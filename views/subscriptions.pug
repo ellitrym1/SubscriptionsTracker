@@ -62,8 +62,25 @@ include header
 
 .popup-modal-edit-bg 
     .popup-modal-edit       
-        div EDIT
-        button.popup-btn EDIT
+        h1 EDIT SUBSCRIPTION
+            form(action="/subscriptions/edit" method="post" class="form-elements-container")
+                .subscription-name(class="form-elements") 
+                    label(id="label-subscription-name") Subscription name
+                    input(type="text", name="name", id="subscription-name", required)
+                .payment-date(class="form-elements")
+                    label(id="label-payment-date") Payment Date
+                    input(type="text", name="date", id="payment-date", required)
+                .payment-frequency(class="form-elements")
+                    label(id="label-payment-frequency") Payment Frequency
+                    select(name="frequency", id="payment-frequency", required)
+                        option(value="weekly") Weekly
+                        option(value="monthly") Monthly
+                        option(value="bi-annually") Bi-Annually
+                        option(value="annually") Annually        
+                .amount(class="form-elements")
+                    label(id="label-amount") Amount
+                    input(type="text", name="amount", id="amount", required)
+                button(type="submit") EDIT
         span.popup-close(class="popup-edit-close") Close
 
 .popup-modal-delete-bg 
