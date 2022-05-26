@@ -21,13 +21,13 @@ include header
                             td(style="display:none")
                                 input(type="text", name="name", value=`${subscription.name}` id="subscription-name")
                             td 
-                                span= subscription.name
+                                span.table-subscription-name= subscription.name
                             td 
-                                span= subscription.paymentDate
+                                span.table-subscription-payment-date= subscription.paymentDate
                             td 
-                                span= subscription.paymentFrequency  
+                                span.table-subscription-payment-frequency= subscription.paymentFrequency  
                             td 
-                                span= subscription.amount 
+                                span.table-subscription-amount= subscription.amount 
                             td
                                 .form-btn(class="edit-btn") EDIT    
                             td
