@@ -2,7 +2,9 @@ include header
 
 .subscriptions
     .current-user 
-        .user= name
+        .user-profile 
+            img(src="/assets/profile-picture.jpg", alt="profile-picture", srcset="")
+            .user= name
         a(class="logout-btn" href="/logout") LOG OUT 
     .subscriptions-modal 
         .subscriptions-modal-header 
@@ -15,11 +17,11 @@ include header
                     th DATE 
                     th FREQUENCY
                     th AMOUNT 
-                each subscription in subscriptions
+                each subscription, index in subscriptions
                     tr(class=`subscription-row`) 
                         form(id="subscription-form" action=`/subscriptions/delete`, method="post")
                             td(style="display:none")
-                                input(type="text", name="name", value=`${subscription.name}` id="subscription-name")
+                                input(type="text", name="name", value=`${subscription.name}` id=`subscription-name-${index}`)
                             td 
                                 span.table-subscription-name= subscription.name
                             td 
